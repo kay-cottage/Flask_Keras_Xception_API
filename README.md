@@ -46,7 +46,7 @@ An API with Xception which can identify a variety of cells images.
 2.检查文件夹classes.txt文件中是否有需要识别细胞的类别名称（英文），即RBC，eosinophi，basophil，neutrophil！（claesses.txt是用来存放被识别物体种类名称的文件）
 
 
-3.启动程序Server_Backend_Xception.py，通过浏览器端访问API路径（例如http://example.com:5000/upload)得到请求页面，选择需要识别的图片上传，等待返回识别结果即可！
+3.启动程序Server_Backend_Xception.py，通过浏览器端访问API路径（例如http://example.com:5000/upload) 得到请求页面，选择需要识别的图片上传，等待返回识别结果即可！
 
 
 **# 相关模型资源 #**
@@ -74,7 +74,7 @@ An API with Xception which can identify a variety of cells images.
 注意：该程序初次加载模型启动时候需要一段时间（10s或更长），请耐心等待！
 
 
-视频版本效果演示欢迎访问我的bilibili主页查看：https://space.bilibili.com/362186371，，，更多相关项目视频敬请期待！
+视频版本效果演示欢迎访问我的bilibili主页查看：https://space.bilibili.com/362186371 更多相关项目视频敬请期待！
 
 
 最后，不喜勿喷，谢谢！
