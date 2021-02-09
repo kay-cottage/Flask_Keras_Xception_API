@@ -1,5 +1,5 @@
 # Flask_Keras_Xception_API
-使用Flask部署基于Keras的Xception神经网络实现细胞种类的图像识别（含简单前端demo）
+使用Flask部署基于Keras的Xception神经网络实现细胞种类图像识别（含简单前端demo）
 
 
 **# 简介 #**
@@ -66,6 +66,9 @@ An API with Xception which can identify a variety of cells images.
 
 
 项目中Server_Backend_Xception.py文件为API服务器端程序，返回json类型格式识别结果。
+
+
+请在templates文件夹下内放置html文件，Server_Backend_Xception.py调用该目录下的upload页面
 
 
 使用POST请求才能正确返回识别结果，如果使用GET等请求会返回错误代码，请正确设置请求方式！
