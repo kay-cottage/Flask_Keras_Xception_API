@@ -1,11 +1,59 @@
-<html>
+<<!DOCTYPE html>
+<html lang="en"></html>
+<style>
+    .div1 {
+    font-family: Microsoft Yahei;
+    float: left;
+    height: 41px;
+    background: #f5696c;
+    width: 144px;
+    position: relative;
+}
+.div2 {
+    color: white;
+    text-align: center;
+    padding-top: 12px;
+    font-size: 15px;
+    font-weight: 800;
+}
+.inputstyle {
+    width: 144px;
+    height: 41px;
+    cursor: pointer;
+    font-size: 30px;
+    outline: medium none;
+    position: absolute;
+    filter: alpha(opacity=0);
+    -moz-opacity: 0;
+    opacity: 0;
+    left: 0px;
+    top: 0px;
+}
+</style>
 <head>
-  <title>Upload And Identify</title>
+    <meta charset="UTF-8">
+    <title>Upload and Identify</title>
 </head>
-<body>
-    <form action="http://localhost:5000/uploader" method="POST" enctype="multipart/form-data">
-        <input type="file" name="file" accept=".jpg,.png" />
-        <input type="submit" />
+<body background="https://image.baidu.com/search/down?tn=download&ipn=dwnl&word=download&ie=utf8&fr=result&url=https%3A%2F%2Fgimg2.baidu.com%2Fimage_search%2Fsrc%3Dhttp%253A%252F%252Ffile01.16sucai.com%252Fd%252Ffile%252F2014%252F0209%252F4d3f0971526476b5a78dbda2b2bc78ec.jpg%26refer%3Dhttp%253A%252F%252Ffile01.16sucai.com%26app%3D2002%26size%3Df9999%2C10000%26q%3Da80%26n%3D0%26g%3D0n%26fmt%3Djpeg%3Fsec%3D1615485551%26t%3D507677f8c61e7275e8771da021606d93&thumburl=https%3A%2F%2Fss0.bdstatic.com%2F70cFvHSh_Q1YnxGkpoWK1HF6hhy%2Fit%2Fu%3D1017467928%2C3638152990%26fm%3D26%26gp%3D0.jpg">
+<h1>xception神经网络图像识别</h1>
+<br>
+<br>
+
+    <form action="http://192.168.3.5:5000/uploader" method="POST" enctype="multipart/form-data">
+        <div class="div1">
+        <div class="div2">选择图片</div>
+        <input type="file" name="file" accept=".jpg,.png"  class="inputstyle"/>
+        </div>
+        <br>
+        <br>
+        <br>
+        <br>
+
+
+
+        <div class="div1">
+        <div class="div2">上传识别</div>
+        <input type="submit" class="inputstyle"/>
     </form>
     <form action="" method=""></form>
 </body>
