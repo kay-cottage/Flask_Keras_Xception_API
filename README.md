@@ -1,6 +1,8 @@
 # Flask_Keras_Xception_API
 
-![](https://github.com/kay-cottage/Flask_Keras_Xception_API/blob/main/%E5%B0%81%E9%9D%A2.png)
+![](https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fww3.sinaimg.cn%2Fmw690%2F002TLsr9ly1gnoe8oslb7j60hs0bsq9s02.jpg&refer=http%3A%2F%2Fwww.sina.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1616002275&t=e4d9e7fccdd063e5a8d7d84fb8bad1ae)
+
+
 使用Flask部署的基于Keras的Xception神经网络实现细胞种类图像辅助AI医疗识别系统（含简单前端demo）
 
 
