@@ -1,5 +1,10 @@
 # Flask_Keras_Xception_API
-使用Flask部署基于Keras的Xception神经网络实现细胞种类图像识别（含简单前端demo）
+
+![](https://github.com/kay-cottage/Flask_Keras_Xception_API/blob/main/%E5%B0%81%E9%9D%A2.png)
+使用Flask部署的基于Keras的Xception神经网络实现细胞种类图像辅助AI医疗识别系统（含简单前端demo）
+
+
+视频演示请见：https://www.bilibili.com/video/BV12A411T7bu
 
 
 **# 简介 #**
@@ -36,7 +41,7 @@ An API with Xception which can identify a variety of cells images.
 
 
 
-1.请先在python安装好相应导入（import）的库，然后通过以下链接下载我已训练好的Xception神经网络模型，（4种细胞识别）并放入到目录model_source下。
+1.请先在python安装好相应需要导入的库（或者直接下载安装包进行安装，然后通过以下链接下载已训练好的Xception神经网络模型，（4种细胞识别）并放入到目录model_source下。
 
 
 链接：https://pan.baidu.com/s/1hdLoYS51IqcdVhB01w2yDw 提取码：X1z9
@@ -46,7 +51,7 @@ An API with Xception which can identify a variety of cells images.
 2.检查文件夹classes.txt文件中是否有需要识别细胞的类别名称（英文），即RBC，eosinophi，basophil，neutrophil！（claesses.txt是用来存放被识别物体种类名称的文件）
 
 
-3.启动程序Server_Backend_Xception.py，通过浏览器端访问API路径（例如http://example.com:5000/upload) 得到请求页面，选择需要识别的图片上传，等待返回识别结果即可！
+3.启动程序Server_Backend_Xception.py(或者启动Server_Backend_Xception.exe），通过浏览器端访问API路径（例如http://example.com:5000/upload) 得到请求页面，选择需要识别的图片上传，等待返回识别结果即可！
 
 
 **# 相关模型资源 #**
@@ -65,7 +70,7 @@ An API with Xception which can identify a variety of cells images.
 **# 补充（注意事项） #**
 
 
-1.项目中Server_Backend_Xception.py文件为API服务器端程序，返回json类型格式识别结果。
+1.项目中Server_Backend_Xception.py/Server_Backend_Xception.exe文件为API服务器端程序，返回json类型格式识别结果。
 
 
 2.请在templates文件夹下内放置html文件，Server_Backend_Xception.py调用该目录下的upload页面
