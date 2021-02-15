@@ -31,7 +31,7 @@ An API with Xception which can identify a variety of cells images.
 
 
 
-# 使用方法#
+# 使用方法 #
 
 
 
@@ -65,7 +65,7 @@ An API with Xception which can identify a variety of cells images.
 下载链接链接：https://pan.baidu.com/s/1xY5C5x9iDkS-dr2QGtcGng 提取码：X1z9
 
 
-# 补充（注意事项） #
+# 补充（注意事项）#
 
 
 1.项目中Server_Backend_Xception.py/Server_Backend_Xception.exe文件为API服务器端程序，返回json类型格式识别结果。
