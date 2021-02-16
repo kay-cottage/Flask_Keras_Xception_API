@@ -39,7 +39,7 @@ An API with Xception which can identify a variety of cells images.
 
 
 
-1.请先在python安装好相应需要导入的库【或者直接下载安装包（压缩包请见下方链接）进行安装】，然后通过以下链接下载已训练好的Xception神经网络模型，（4种细胞识别）并放入到目录model_source下。
+1.请先在python安装好相应需要导入的库【或者直接下载安装包（下载链接请见下方链接）进行安装】，然后通过以下链接下载已训练好的Xception神经网络模型，（4种细胞识别）并放入到目录model_source下。
 
 
 模型文件链接：https://pan.baidu.com/s/1hdLoYS51IqcdVhB01w2yDw 提取码：X1z9
@@ -54,7 +54,10 @@ An API with Xception which can identify a variety of cells images.
 
 
 # 相关模型资源 #
-软件压缩包下载链接：https://github.com/kay-cottage/Flask_Keras_Xception_API/releases/download/v1.0/Flask_Xception_API.zip
+X64版本软件安装包（Setup.exe）下载链接：https://github.com/kay-cottage/Flask_Keras_Xception_API/releases/download/V1.0/Flask_Xception_API_V1.0_X64.exe
+
+
+X64版本软件压缩包(.zip)下载链接：https://github.com/kay-cottage/Flask_Keras_Xception_API/releases/download/v1.0/Flask_Xception_API.zip
 
 4种细胞识别神经网络模型（准确率更高）
 
