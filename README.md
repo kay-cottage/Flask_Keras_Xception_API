@@ -53,11 +53,15 @@ An API with Xception which can identify a variety of cells images.
 3.启动程序Server_Backend_Xception.py(或者启动Server_Backend_Xception.exe），通过浏览器端访问API路径（例如http://example.com:5000/upload) 得到请求页面，选择需要识别的图片上传，等待返回识别结果即可！
 
 
-# 相关模型资源 #
-X64版本软件安装包（Setup.exe）下载链接：https://github.com/kay-cottage/Flask_Keras_Xception_API/releases/download/V1.0/Flask_Xception_API_V1.0_X64.exe
+# 相关下载资源 #
+X64版本软件安装包（Setup.exe）
+
+下载链接：https://github.com/kay-cottage/Flask_Keras_Xception_API/releases/download/V1.0/Flask_Xception_API_V1.0_X64.exe
 
 
-X64版本软件压缩包(.zip)下载链接：https://github.com/kay-cottage/Flask_Keras_Xception_API/releases/download/v1.0/Flask_Xception_API.zip
+X64版本软件压缩包(.zip)
+
+下载链接：https://github.com/kay-cottage/Flask_Keras_Xception_API/releases/download/v1.0/Flask_Xception_API.zip
 
 4种细胞识别神经网络模型（准确率更高）
 
