@@ -38,8 +38,26 @@
 <h1>xception神经网络图像识别</h1>
 <br>
 <br>
+    
+        <form action="http://192.168.3.5:5000/api/dbuploader" method="POST" enctype="multipart/form-data">
+        <div class="div1">
+        <div class="div2">选择数据集</div>
+        <input type="file" name="file" accept=".zip,.rar"  class="inputstyle"/>
+        </div>
+        <br>
+        <br>
+        <br>
+        <br>
+        <div class="div1">
+        <div class="div2">上传数据集</div>
+        <input type="submit" class="inputstyle"/>  
+                <br>
+        <br>
+        <br>
+        <br>
+     
 
-    <form action="http://192.168.3.5:5000/uploader" method="POST" enctype="multipart/form-data">
+    <form action="http://192.168.3.5:5000/api/identify" method="POST" enctype="multipart/form-data">
         <div class="div1">
         <div class="div2">选择图片</div>
         <input type="file" name="file" accept=".jpg,.png"  class="inputstyle"/>
