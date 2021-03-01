@@ -2,7 +2,10 @@
 使用Flask部署的基于Keras的Xception神经网络实现细胞种类图像AI医疗辅助识别系统（含简单前端demo）
 
 
-视频演示请见：https://www.bilibili.com/video/BV12A411T7bu
+微信小程序版识别演示视频请见：https://www.bilibili.com/video/BV1pf4y147er
+
+
+网页版识别程序演示视频请见：https://www.bilibili.com/video/BV12A411T7bu
 
 
 # 简介 #
