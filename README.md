@@ -13,7 +13,10 @@
 An API with Xception which can identify a variety of cells images.
 
 
-基于Flask搭建的Xception深度可分离卷积神经网络训练的细胞形态识别的API接口（更换网络模型也可以识别多种不同类型的图像）。通过部署在云服务器，在并发量较小的情况下，能过作为第三方接口被APP，微信小程序（WechatMiniProgramme）等调用，能较快速地对客户端上传的图片进行准确的识别并返回结果！
+基于Flask搭建的Xception深度可分离卷积神经网络训练的细胞形态识别的API接口（更换网络模型也可以识别多种不同类型的图像）。通过部署在云服务器，在并发量较小的情况下，能过作为第三方接口被APP，微信小程序（WechatMiniProgramme）等调用，较快速地对客户端上传的图片进行准确的识别并返回结果！
+
+
+含有带有标签的图像数据集的上传接口供使用者上传以用作神经网络的训练，提升神经网络的识别种类与中准确度！
 
 
 目前能够比较准确识别（测试集准确率大于90%）嗜酸性粒细胞，嗜碱性粒细胞，中性粒细胞，与成熟红细胞4种！或者嗜酸性粒细胞，嗜碱性粒细胞，中性粒细胞，成熟红细胞，淋巴细胞，单核细胞与浆细胞7种！（后三者为差别更小的细粒度图像识别，由于数据非常有限，准确率有待提高!)
@@ -53,7 +56,7 @@ An API with Xception which can identify a variety of cells images.
 2.检查文件夹classes.txt文件中是否有需要识别细胞的类别名称（英文），即RBC，eosinophi，basophil，neutrophil！（claesses.txt是用来存放被识别物体种类名称的文件）
 
 
-3.启动程序Server_Backend_Xception.py(或者启动Server_Backend_Xception.exe），通过浏览器端访问API路径（例如http://example.com:5000/upload) 得到请求页面，选择需要识别的图片上传，等待返回识别结果即可！
+3.启动程序Server_Backend_Xception.py(或者启动Server_Backend_Xception.exe），通过浏览器端访问API路径（例如： http://example.com:5000/upload ） 得到请求页面，选择需要识别的图片上传，等待返回识别结果即可！又或者通过APP，微信小程序调用【例如http://example.com:5000/api/identify （识别接口） 或者 http://example.com:5000/api/dbupload （数据集上传接口）】 接口使用即可
 
 
 # 相关下载资源 #
