@@ -26,6 +26,7 @@ model = load_model(model_path)
 
 app = Flask(__name__)
 app.config['UPLOAD_FOLDER'] = 'upload/'
+app.config['DB_FOLDER'] = 'dbupload/'
 
 
 #读取识别种类
@@ -37,8 +38,8 @@ with open(r"classes.txt", 'r') as f:
     li = format(list_long, '1f')
 
 
-
-@app.route("/uploader", methods=["GET", "POST"])
+#识别接口
+@app.route("/api/identify", methods=["GET", "POST"])
 def upload():
     if request.method == 'POST':
         start_time = t.time()
@@ -54,11 +55,36 @@ def upload():
         predi()
         return json.dumps(data)
     else:
-        return {"code":405,
+        errordata = {"code":405,
                 "msg":"Method Not Allowed"
                 }
+        return json.dumps(errordata)
 
+    
 
+#数据集上传接口(上传数据集压缩文件）   
+@app.route("/api/dbupload", methods=["GET", "POST"])
+def dbupload():
+    if request.method == 'POST':
+        start_time = t.time()
+        f1 = request.files['file']
+        if f1 is None:
+            return "文件上传失败"
+        global data_file_path
+        data_file_path = os.path.join(app.config['DB_FOLDER'], secure_filename(f1.filename))
+        f.save(os.path.join(app.config['DB_FOLDER'], secure_filename(f1.filename)))
+        end_time = t.time()
+        used_time = end_time - start_time
+        print(file_path + '文件用时%.3f s上传成功(file upload successfully)' % used_time)
+        dbdata = {"code":200,
+                "msg":"success"
+                }
+        return json.dumps(dbdata)
+    else:
+        errordata = {"code":405,
+                "msg":"Method Not Allowed"
+                }
+        return json.dumps(errordata)
 
 
 
@@ -69,7 +95,7 @@ def upload_file():
 
 
 
-
+#预测函数
 def predi():
     global model
     # load an input image
