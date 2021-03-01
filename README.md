@@ -85,13 +85,19 @@ X64版本软件压缩包(.zip)
 1.项目中Server_Backend_Xception.py/Server_Backend_Xception.exe文件为API服务器端程序，返回json类型格式识别结果。
 
 
-2.请在templates文件夹下内放置html文件，Server_Backend_Xception.py调用该目录下的upload页面
+2.请在templates文件夹下内放置html文件，Server_Backend_Xception.py调用该目录下的upload.html页面
 
 
-3.使用POST请求才能正确返回识别结果，如果使用GET等请求会返回错误代码，请正确设置请求方式！
+3.upload目录下用于存放用户识别上传的图片，dbipload目录下用于用户上传的存放数据集。
 
 
-4.注意：该程序初次加载模型启动时候需要一段时间（10s或更长），请耐心等待！
+4.使用POST请求才能正确返回识别结果，如果使用GET等请求会返回错误代码，请正确设置请求方式！
+
+
+5.注意：该程序初次加载模型启动时候需要一段时间（10s或更长），请耐心等待！
+
+
+6.数据集最好统一使用压缩包形式上传（.zip,.rar文件)
 
 
 视频版本效果演示欢迎访问我的bilibili主页查看：https://space.bilibili.com/362186371 更多相关项目视频敬请期待！
