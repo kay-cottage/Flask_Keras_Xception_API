@@ -4,7 +4,7 @@ import base64
 import json
  
 url = input('请输入API的URL:')
-#url = 'http://192.18.31.31:5000/'
+#url = 'http://192.18.31.31:5000/api/identify'
 
 try:
     files = {"pic":open("2.jpg","rb")}
