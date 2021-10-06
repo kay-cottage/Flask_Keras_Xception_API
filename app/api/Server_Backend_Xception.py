@@ -15,18 +15,30 @@ from tensorflow.python.keras.backend import set_session
 
 global sess
 global graph
-global data
 
+
+print('by kayak')
+print('On GitHub:https://github.com/kay-cottage/Flask_Keras_Xception_API')
+print('************************************************')
+print('请正确配置classes.txt文件内的识别种类名称')
+print('请正确配置好model_source文件夹下的模型文件')
+print('请正确配置好templates文件夹下的html文件')
+print('上传识别的图片被存于upload文件夹下')
+print('************************************************')
+
+
+
+#model_path = input(r'请正确输入模型文件的路径（model_path):')
+model_path = r'model_source\model_fine_ep68_xception_cell_4.h5'
+print('正在启动tensorflow加载模型文件，请稍等...')
 sess = tf.Session()
 graph = tf.get_default_graph()
 set_session(sess)
-model_path = r'model_source\model_fine_ep68_xception_cell_4.h5'
 model = load_model(model_path)
 
 
 app = Flask(__name__)
 app.config['UPLOAD_FOLDER'] = 'upload/'
-app.config['DB_FOLDER'] = 'dbupload/'
 
 
 #读取识别种类
@@ -38,8 +50,8 @@ with open(r"classes.txt", 'r') as f:
     li = format(list_long, '1f')
 
 
-#识别接口
-@app.route("/api/identify", methods=["GET", "POST"])
+
+@app.route("/uploader", methods=["GET", "POST"])
 def upload():
     if request.method == 'POST':
         start_time = t.time()
@@ -52,53 +64,26 @@ def upload():
         end_time = t.time()
         used_time = end_time - start_time
         print(file_path + '图片用时%.3f s上传成功(file upload successfully)' % used_time)
-        predi()
+        data = predi(file_path)
         return json.dumps(data)
     else:
-        errordata = {"code":405,
+        return {"code":405,
                 "msg":"Method Not Allowed"
                 }
-        return json.dumps(errordata)
 
-    
 
-#数据集上传接口(上传数据集压缩文件）   
-@app.route("/api/dbupload", methods=["GET", "POST"])
-def dbupload():
-    if request.method == 'POST':
-        start_time = t.time()
-        f1 = request.files['file']
-        if f1 is None:
-            return "文件上传失败"
-        global data_file_path
-        data_file_path = os.path.join(app.config['DB_FOLDER'], secure_filename(f1.filename))
-        f.save(os.path.join(app.config['DB_FOLDER'], secure_filename(f1.filename)))
-        end_time = t.time()
-        used_time = end_time - start_time
-        print(file_path + '文件用时%.3f s上传成功(file upload successfully)' % used_time)
-        dbdata = {"code":200,
-                "msg":"success"
-                }
-        return json.dumps(dbdata)
-    else:
-        errordata = {"code":405,
-                "msg":"Method Not Allowed"
-                }
-        return json.dumps(errordata)
 
 
 
 @app.route('/upload')
 def upload_file():
-    return render_template('upload.html')
+    return render_template('upload2.html')
 
 
 
 
-#预测函数
-def predi():
-    global model
-    # load an input image
+
+def predi(file_path):
     print('loading picture(正在加载识别图片）')
     # load an input image
     start_time1 = t.time()
@@ -106,33 +91,27 @@ def predi():
     x = image.img_to_array(img)
     x = np.expand_dims(x, axis=0)
     x = preprocess_input(x)
-    #print(x)
     with graph.as_default():
         set_session(sess)
         pred = model.predict(x)[0]
-        #print('prediction:',pred)
-        global result
         result = [(classes[i], float(pred[i]) * 100.0) for i in range(len(pred))]
         end_time1 = t.time()
         used_time1 = end_time1 - start_time1
         print('识别图片过程用时%.2f s(predict successfully)' % used_time1)
-        print('result:',result)
-        global data
-        data = {'code':200,
-                'msg':"success",
-                'img_path': file_path,
-                'result':result
-                }
         result.sort(reverse=True, key=lambda x: x[1])
         for i in range(0, 3):
             (class_name, prob) = result[i]
             print("Top %d ====================" % (i + 1))
             print("Class name: %s" % (class_name))
             print("Probability: %.3f%%" % (prob))
-    print('json:',json.dumps(data))
-    print(t.strftime('%Y-%m-%d-%H:%M:%S',t.localtime()))
-    print('##############################################')
-    return json.dumps(data)
+   
+    data = {'code': 200,
+            'msg': "success",
+            'img_path': file_path,
+            'result': result
+            }
+    print('************************************************')
+    return data
 
 
 
@@ -140,4 +119,3 @@ def predi():
 # 启动路由
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000)
-
